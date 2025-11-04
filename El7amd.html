@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نماذج البوستات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+           .script-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            width: 80%;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        .script-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .script-info {
+            padding: 20px;
+        }
+
+        .script-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .script-info p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .script-files {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .script-files h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .script-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .script-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 12px 20px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .script-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateX(5px);
+        }
+
+        .script-link i {
+            font-size: 1.2rem;
+        }
+
+         .video-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.video-buttons .btn {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.video-buttons .btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
+  transform: translateY(-2px);
+}
+
+.video-description {
+  padding: 20px 20px;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .video-card {
+            background: var(--dark-color);
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid var(--secondary-color)
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .video-content {
+            padding: 16px;
+        }
+
+        .video-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .video-content p {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #005ecb;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #005ecb;
+        }
+        .video-item {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+}
+
+.video-item video {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.video-item img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+      .copies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        :root {
+            --primary-color: #60a5fa;
+            --secondary-color: #93c5fd;
+            --accent-color: #38bdf8;
+            --dark-color: #111827;
+            --light-color: #1f2937;
+            --text-color: #e5e7eb;
+            --card-bg: #374151;
+            --nav-bg: rgba(17, 24, 39, 0.95);
+            --border-color: #4b5563;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--dark-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        footer {
+            background-color: var(--light-color);
+            color: white;
+            padding: 50px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--nav-bg);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .back-btn {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        .project-header {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .project-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .project-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Content */
+        .project-content {
+            padding: 80px 0;
+        }
+
+        .project-section {
+            margin-bottom: 60px;
+        }
+
+        .project-section h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .project-description {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-description p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .post-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 20px;
+        }
+
+        .post-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .post-content p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info strong {
+            color: var(--accent-color);
+        }
+
+        .project-links {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 12px 30px;
+            border: 2px solid var(--accent-color);
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .project-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        /* Videos Section */
+        .videos-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: var(--dark-color);
+        }
+
+        .video-content {
+            padding: 20px;
+        }
+
+        .video-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .video-content p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .video-info {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .video-info p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .video-info strong {
+            color: var(--accent-color);
+        }
+
+        .script-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .script-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .script-info {
+            padding: 20px;
+        }
+
+        .script-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .script-info p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .script-files {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .script-files h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .script-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .script-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 12px 20px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .script-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateX(5px);
+        }
+
+        .script-link i {
+            font-size: 1.2rem;
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .video-card {
+            background: var(--dark-color);
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid var(--secondary-color)
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .video-content {
+            padding: 16px;
+        }
+
+        .video-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .video-content p {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #005ecb;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #005ecb;
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .post-content {
+                padding: 15px;
+            }
+
+            .post-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .post-content p {
+                font-size: 0.95rem;
+            }
+
+            .contact-info {
+                padding: 12px;
+            }
+
+            .videos-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-video {
+                height: 250px;
+            }
+
+            .video-content {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .project-header p {
+                font-size: 1rem;
+            }
+
+            .post-content h3 {
+                font-size: 1rem;
+            }
+
+            .post-content p {
+                font-size: 0.9rem;
+            }
+
+            .project-video {
+                height: 200px;
+            }
+
+            .video-content {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"></a>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back
+            </a>
+        </div>
+    </nav>
+
+
+    <section id="videos" class="section">
+        <div class="container">
+
+
+            <div class="videos-grid">
+
+                <div class="video-card">
+                    <img src="El7amd/1.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            نفسك تتعلمي الخياطة ومفيش معاد مناسب؟ عملنا يوم الجمعة مخصوص عشانك ♥️<br>
+                            فتحنا جروب جديد لكورس الكاجوال مخصوص للناس اللي وقتهم ضيق، كل جمعة 3 ساعات متواصلة، تتعلمي فيهم خطوة بخطوة من غير ما يبوظلك روتين الأسبوع.<br><br>
+                            الكاجوال هو الأساس، من خلاله هتقدري تعملي لبس يومي مريح وأنيق، وتفتحي باب رزق ليكي من أول موديل تنفذيه.<br><br>
+                            الكورسات عندنا مش للكاجوال بس، لأ عندنا 8 كورسات مختلفة تناسب كل هدف ومرحلة:<br>
+                            1️⃣ كورس الكاجوال<br>
+                            2️⃣ كورس الزي الشرعي<br>
+                            3️⃣ كورس الأطفال (من البيبي لحد 10 سنوات)<br>
+                            4️⃣ كورس الفورمال<br>
+                            5️⃣ كورس التشكيل على المانيكان<br>
+                            6️⃣ كورس السواريه<br>
+                            7️⃣ كورس الملايات (من 6 لـ 10 مشاريع عملية)<br>
+                            8️⃣ كورس تصليح الملابس باحترافية<br><br>
+                            متخليش وقتك الضيق يمنعك من تحقيق حلمك، الجمعة دي بداية جديدة ليكي ♥️<br><br>
+                            📍 المكان: كفر الشيخ – أمام الموقف<br>
+                            📞 للحجز والاستفسار ابعتيلنا على الواتساب: 01001721558
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="El7amd/2.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            كل اللي كان نفسهم يتعلموا الخياطة في شهر 9… الفرصة جاتلكم دلوقتي!<br>
+                            الدراسة رجعت، ورجعت معاها فرصتك الذهبية تستثمري في نفسك!<br>
+                            الحجز بدأ، واللي هيبدأ النهاردة هو اللي هيشوف فرق كبير قبل نهاية السنة ♥️<br><br>
+                            لو إنتي أم وأولادك في المدرسة الصبح، تعالي استغلي ساعتين من يومك معانا من 10 لـ 12.<br>
+                            ولو ولادك في الفترة المسائية، موجودين معاكي بردو من 3 لـ 5.<br>
+                            وبالنسبة للشاطرين لطلبة الجامعة… بعد المحاضرات على طول تقدري تلحقي الكورس وتتعلمي حاجة تفتحلك باب رزق يساعدك أثناء الدراسة ❤️<br>
+                            ولو بتخلصي شغلك 2 الظهر، بردو تلحقينا في الفترة المسائية من 3 لـ 5.<br><br>
+                            والأحلى من كدا؟ معانا عروض خاصة: 🤗<br>
+                            خصم 20% عند حجز كورسين.<br>
+                            خصم للأم و بنتها أو الأخت وأختها.<br>
+                            وخصومات أكبر من 20% لأي حد يجيب صاحبة أو يجيب حد معاه.<br><br>
+                            الفرصة دي مش هتتكرر… ابدئي النهاردة، عشان كل غرزة هتعمليها هتبقى بداية جديدة ليكي 🦋<br><br>
+                            📍 كفر الشيخ – أمام الموقف<br>
+                            📞 كلمينا دلوقتي واحجزي مكانك عشان الاماكن محدودة<br>
+                            📞 للحجز أو للاستفسار على رسائل الصفحة أو الواتساب 01001721558 ، وخلي حلمك يبدأ من هنا.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="El7amd/3.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            كل غرزة تحكي حكاية نجاح جديدة!<br>
+                            النهاردة في كورس الزي الشرعي، وصلنا للمحاضرة السادسة، البنات قصوا الإسدال بأيديهم، وكمان ضبطنا باقي الباترونات عشان يطلع كل تفصيلة مظبوطة على الآخر🤗<br>
+                            وفي المحاضرة الخامسة ؟ قدروا يقصوا دريس الزي الشرعي بخطوات عملية من أول باترون لحد القماش 🤎<br>
+                            اللي بيحصل مش مجرد تدريب، ده رحلة من أول ورقة باترون لحد قطعة لبس كاملة جاهزة للبس وكمان للبيع.<br><br>
+                            والأجمل لسه جاي ❤️<br>
+                            استنوا فيديو بعد انتهاء الكورس، نشارككم فيه لحظات التخرج وأجمل المشاريع اللي نفذوها بإيديهم.<br><br>
+                            📍 مع أتيليه حليمة… حلمك في الخياطة مش مجرد فكرة، ده واقع بيتحقق غرزة ورا غرزة.<br>
+                            📍 المكان: كفر الشيخ – أمام الموقف<br>
+                            📞 كلمينا دلوقتي للحجز أو للاستفسار على الواتساب 01001721558 ، وخلي حلمك يبدأ من هنا 💕
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="El7amd/4.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            عارفة إحساس إنك تلبسي ابنك أو أختك الصغيرة حاجة إنتي عملتيها بإيدك؟ ❤<br>
+                            الفرحة في عينيهم وهم بيقولوا "واو ده منين؟" بتخليكي تحسي إن كل دقيقة قضيتيها في تعلم الخياطة كانت تستاهل.<br><br>
+                            في كورس ملابس الأطفال، هنتعلم مع بعض من الصفر إزاي ننفذ لبس من أول البيبي الصغير لحد سن 10 سنين:<br>
+                            أطقم صغيرة وناعمة للمواليد<br>
+                            فساتين مبهجة وألوانها تفرح<br>
+                            بلوزات وبناطيل مريحة للعب<br>
+                            جاكيتات شتوية تدفي القلب قبل الجسم<br><br>
+                            الموضوع مش معقد خالص… إحنا هنبدأ خطوة بخطوة، ومع أول قطعة تعمليها هتلاقي نفسك قادرة تخيطي لبس على ذوقك أو حتى تبيعي وتكسبي منه.<br><br>
+                            📞 للإستفسار والحجز ابعتي لنا علي رسائل الصفحة أو الواتساب 01001721558 ، وخلي أول غرزة ليكي بداية قصة نجاحك 🤎<br>
+                            📍 العنوان: كفر الشيخ – أمام الموقف
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="El7amd/5.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            لسه بتفكري تبدأي منين في الخياطة ؟ البداية الصح هي الزي الشرعي.<br>
+                            ليه؟ لأنه بسيط في التنفيذ، مطلوب في كل وقت، ويقدر يفتحلك باب رزق من أول قطعة تعمليها.<br><br>
+                            لما تتعلميه، هتقدري تنفذي حاجات كتير زي:<br>
+                            عبايات أنيقة ومريحة<br>
+                            فساتين واسعة للمشاوير والمناسبات<br>
+                            تنانير طويلة بستايلات مختلفة<br>
+                            بلوزات أو تونيكات فضفاضة<br><br>
+                            إنتي مش محتاجة تستني لحد ما تبقي محترفة، إنتي محتاجة تاخدي أول خطوة… دلوقتي.<br>
+                            في الكورس ده، هتمشي خطوة بخطوة لحد ما تعملي موديلات على مقاسك وبذوقك، ومع التدريب هتقدري تبيعي وتكسبي من بيتك.<br><br>
+                            استثمري في نفسك النهاردة، واعملي حاجة ترجعلك أضعاف بكرة.<br><br>
+                            📞 للإستفسار والحجز ابعتي لنا علي رسائل الصفحة أو الواتساب 01001721558 ، وخلي أول غرزة ليكي بداية قصة نجاحك 🤎<br>
+                            📍 العنوان: كفر الشيخ – أمام الموقف
+                        </p>
+
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+        <div class="copies-grid">
+
+
+
+  <div class="video-item">
+
+    <div class="video-description">
+  <p dir="rtl">
+لسه بتسألي نفسك أبدأ منين في الخياطة؟
+ميس حليمة جاوبت 👏
+8 كورسات عملية… وأهمهم التصليح والزي الشرعي، لكل واحد فيهم باب رزق جديد 👗
+شوفي الفيديو واختاري البداية الصح ♥️
+📞 كلمينا و احجزي مكانك عشان الاماكن محدودة جدًا
+📞 للحجز أو للاستفسار ابعتيلنا على رسائل الصفحة او الواتساب 01001721558 ، وخلي حلمك يبدأ من هنا.
+  </p>
+    </div>
+    <div class="video-buttons">
+      <a href="https://www.facebook.com/share/v/1CeY1CkDjs/" target="_blank" class="btn">Watch Video</a>
+
+    </div>
+  </div>
+
+    <div class="video-item">
+
+    <div class="video-description">
+  <p dir="rtl">
+قبل ما تدخلي على كورس السوارية أو الفورمال، لازم تبدأي بالكاجوال… ليه؟
+لأنك لو بدأتي تعليم عشوائي، هتضيعي وقت ومجهود. هنا بنشتغل بقوانين وتريكات وأساسيات خاصة بينا 👌
+الحاجات دي هتسهلك طريقك وتخلي شغلك مظبوط من أول مرة 🤎 
+وعلى فكرة… كورس الفورمال هيبدأ يوم الأحد الجاي، فلو نفسك تتعلمي صح وتدخلي عالم الخياطة بخطوات ثابتة… 
+📞 للإستفسار والحجز ابعتي لنا علي رسائل الصفحة أو الواتساب 01001721558 ، وخلي أول غرزة ليكي بداية قصة نجاحك 🤎 
+📍 العنوان: كفر الشيخ – أمام الموقف
+  </p>
+    </div>
+    <div class="video-buttons">
+      <a href="https://www.facebook.com/share/r/1Wpwu281nL/" target="_blank" class="btn">Watch Video</a>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+</div>
+
+        <div class="script-item">
+        <!-- <img src="Nouf/stratgy.png" alt="Content Plan 1" class="script-img"> -->
+        <div class="script-info">
+            <h3> شهر اغسطس </h3>
+            <div class="script-links">
+                <a href="https://docs.google.com/spreadsheets/d/1f4KjWg6fGpFAb75ewzzHcVGRHHz2VcVgWLdnEJfKA8k/edit?usp=sharing"
+                    class="script-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Content Plan
+                </a>
+            </div>
+        </div>
+    </div>
+   <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Abdeen Mohamed</h3>
+                    <p>Content Writer & Social Media Specialist creating engaging digital experiences through compelling
+                        stories.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <!-- LinkedIn -->
+                        <a href="https://bit.ly/4jlAS2w" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                   
+
+                        <!-- Email -->
+                        <a href="mailto:abdeenmuhamed1@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+
+                        <!-- Phone -->
+                        <a href="tel:01080974284" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/2001080974284" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abdeen Mohamed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
