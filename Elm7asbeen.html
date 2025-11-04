@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نماذج البوستات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+   .script-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            width: 80%;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        .script-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .script-info {
+            padding: 20px;
+        }
+
+        .script-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .script-info p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .script-files {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .script-files h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .script-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .script-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 12px 20px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .script-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateX(5px);
+        }
+
+        .script-link i {
+            font-size: 1.2rem;
+        }
+        :root {
+            --primary-color: #60a5fa;
+            --secondary-color: #93c5fd;
+            --accent-color: #38bdf8;
+            --dark-color: #111827;
+            --light-color: #1f2937;
+            --text-color: #e5e7eb;
+            --card-bg: #374151;
+            --nav-bg: rgba(17, 24, 39, 0.95);
+            --border-color: #4b5563;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--dark-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        footer {
+            background-color: var(--light-color);
+            color: white;
+            padding: 50px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--nav-bg);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .back-btn {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        .project-header {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .project-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .project-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Content */
+        .project-content {
+            padding: 80px 0;
+        }
+
+        .project-section {
+            margin-bottom: 60px;
+        }
+
+        .project-section h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .project-description {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-description p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .post-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 20px;
+        }
+
+        .post-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .post-content p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info strong {
+            color: var(--accent-color);
+        }
+
+        .project-links {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 12px 30px;
+            border: 2px solid var(--accent-color);
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .project-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        /* Videos Section */
+        .videos-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: var(--dark-color);
+        }
+
+        .video-content {
+            padding: 20px;
+        }
+
+        .video-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .video-content p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .video-info {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .video-info p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .video-info strong {
+            color: var(--accent-color);
+        }
+
+        .script-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .script-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .script-info {
+            padding: 20px;
+        }
+
+        .script-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .script-info p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .script-files {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .script-files h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .script-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .script-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 12px 20px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .script-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateX(5px);
+        }
+
+        .script-link i {
+            font-size: 1.2rem;
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .video-card {
+            background: var(--dark-color);
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid var(--secondary-color)
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .video-content {
+            padding: 16px;
+        }
+
+        .video-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .video-content p {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #005ecb;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #005ecb;
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .post-content {
+                padding: 15px;
+            }
+
+            .post-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .post-content p {
+                font-size: 0.95rem;
+            }
+
+            .contact-info {
+                padding: 12px;
+            }
+
+            .videos-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-video {
+                height: 250px;
+            }
+
+            .video-content {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .project-header p {
+                font-size: 1rem;
+            }
+
+            .post-content h3 {
+                font-size: 1rem;
+            }
+
+            .post-content p {
+                font-size: 0.9rem;
+            }
+
+            .project-video {
+                height: 200px;
+            }
+
+            .video-content {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"></a>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back
+            </a>
+        </div>
+    </nav>
+
+
+    <section id="videos" class="section">
+        <div class="container">
+
+
+            <div class="videos-grid">
+
+                <div class="video-card">
+                    <img src="Elm7asbeen/1.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            وقت الشاور مش بس تنظيف، ده لحظة حنية وراحة لطفلك 💛<br>
+                            مع شامبو سانوسان بالكاموميل، هتطمني إن فروة رأسه مرتاحة وبشرته محفوظة بحب 💕<br><br>
+                            ـ خلاصة الكاموميل لتهدئة أي تهيج ✔<br>
+                            ـ بروتين الحليب يرطّب ويحافظ على نعومة الشعر ✔<br>
+                            ـ تركيبة 93٪ طبيعية، خفيفة وآمنة ✔<br>
+                            ـ مفيش دموع، ولا حساسية ✔<br><br>
+                            خلي الشاور لحظة دافية فيها حب وراحة، مع سانوسان 🛁<br><br>
+                            📍 كفر الشيخ – بجوار موقف كفر الشيخ الكبير (آخر الموقف) – كوبري ميت علوان<br>
+                            تقسيم المحاسبين – اتجاه الـ 47 – بجوار مخزن رضا عطية<br>
+                            ومتاح توصيل مجاني داخل مدينة كفر الشيخ ✅
+                        </p>
+
+                    </div>
+                </div>
+                <div class="video-card">
+                    <img src="Elm7asbeen/2.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            لو بنتك شعرها هايش أو أطرافه مقصفة، السيروم ده هيبقى منقذها 💛<br>
+                            سيروم Super Kids 🥰<br><br>
+                            ـ غني بزيوت الأرغان، الجوجوبا، وجوز الهند<br>
+                            ـ بيرطّب الشعر بعمق ويقلل التقصف من أول استخدام<br>
+                            ريحة حلوة، ملمس خفيف، ومناسب للأطفال 💕<br><br>
+                            خلي شعر بنتك دايمًا ناعم ولامع بسهولة!<br><br>
+                            📍 كفر الشيخ – بجوار موقف كفر الشيخ الكبير (آخر الموقف) – كوبري ميت علوان<br>
+                            تقسيم المحاسبين – اتجاه الـ 47 – بجوار مخزن رضا عطية<br>
+                            ومتاح توصيل مجاني داخل مدينة كفر الشيخ ✅
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="Elm7asbeen/3.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            من أول يوم خلي العناية بشعر طفلك تكون ناعمة وآمنة 💙<br>
+                            منتجات Divol للأطفال معمولة بتركيبة لطيفة وخالية من السلفات والبارابين، عشان تحافظ على شعرهم وبشرتهم من أول يوم.<br><br>
+                            ـ شامبو Divol – آمن من عمر يوم، ينظّف بلُطف ويحافظ على فروة الرأس 💜<br>
+                            ـ شاور جيل Divol – لطيف على البشرة، مناسب من أول يوم ♥️<br>
+                            ـ بلسم Divol – بيساعد على فك التشابك وترطيب الشعر (من عمر 7 شهور فيما فوق) 💚<br>
+                            ـ كريم Divol بالهيالورونيك أسيد وفيتامين E – لتغذية الشعر وتقليل التشابك وتعزيز النمو 🤍<br><br>
+                            خلي روتين العناية اليومي لطفلك بسيط وآمن.. مع Divol 💙<br><br>
+                            📍 كفر الشيخ – بجوار موقف كفر الشيخ الكبير (آخر الموقف) – كوبري ميت علوان<br>
+                            تقسيم المحاسبين – اتجاه الـ 47 – بجوار مخزن رضا عطية<br>
+                            ومتاح توصيل مجاني داخل مدينة كفر الشيخ ✅
+                        </p>
+
+                    </div>
+                </div>
+                <div class="video-card">
+                    <img src="Elm7asbeen/4.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            الصيف خلص بس لسه الشمس مش بترحم!<br>
+                            بس ولا يهمك، لأن مع Melatime Sunscreen بشرتك هتفضل محمية ومتألقة طول اليوم 🥰<br><br>
+                            المميز فيه؟<br>
+                            ـ حماية قوية من أشعة الشمس.<br>
+                            ـ تركيبة خفيفة تمتص بسرعة من غير ملمس دهني.<br>
+                            ـ بيدي إشراقة طبيعية تخليكِ واثقة من نفسك في أي خروجة.<br><br>
+                            وكمان، العرض دلوقتي 1+1 ❤️<br>
+                            يعني عبوة ليكي وعبوة كمان تهديها لصحبتك أو تخليها احتياطي.<br><br>
+                            خلي بشرتك محمية ورايقة مع Melatime 🧡<br><br>
+                            للطلب والاستفسار: 0473116888 / 01099009070<br>
+                            📍 كفر الشيخ – بجوار موقف كفر الشيخ الكبير (آخر الموقف) – كوبري ميت علوان<br>
+                            تقسيم المحاسبين – اتجاه الـ 47 – بجوار مخزن رضا عطية<br>
+                            ومتاح توصيل مجاني داخل محافظة كفر الشيخ ✅
+                        </p>
+
+                    </div>
+                </div>
+    <div class="video-card">
+                    <img src="Elm7asbeen/5.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            عمرك سألتي نفسك ليه روتين العناية ساعات بيبوظ؟<br>
+                            ممكن تستعملي أي منتجات، لكن الفرق الحقيقي بيبان مع منتجات أصلية وجودتها مضمونة..<br>
+                            وهنا ييجي دور Straline 💙<br><br>
+                            منتجات معمولة مخصوص عشان تهتم ببشرتك 🥰<br>
+                            ـ ترطيب عميق يفضل معاكي طول اليوم.<br>
+                            ـ نعومة وإحساس بالنضارة من أول استخدام.<br>
+                            ـ عناية عملية تناسب روتينك مهما كان مشغول.<br><br>
+                            وكل ده تلاقيه متوفر دلوقتي في صيدلية المحاسبين ♥️<br><br>
+                            خلي روتينك أذكى مع Straline 💙<br><br>
+                            للطلب والاستفسار: 0473116888 / 01099009070<br>
+                            📍 كفر الشيخ – بجوار موقف كفر الشيخ الكبير (آخر الموقف) – كوبري ميت علوان<br>
+                            تقسيم المحاسبين – اتجاه الـ 47 – بجوار مخزن رضا عطية<br>
+                            ومتاح توصيل مجاني داخل محافظة كفر الشيخ ✅
+                        </p>
+
+                    </div>
+                </div>
+    <div class="video-card">
+                    <img src="Elm7asbeen/6.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            راجل.. مسؤولياتك مش سهلة !<br>
+                            شغل وضغط وأهل وبيت.. وتبقى عايز تكمل بنفس القوة كل يوم 💪<br>
+                            الحل مش في كوباية قهوة ولا في يوم راحة.. الحل في إن جسمك يكون مُجهز لكل تحدي.<br><br>
+                            Wellman… دعم شامل لصحة الراجل :<br>
+                            ـ طاقة تدوم معاك لاخر اليوم<br>
+                            ـ تركيز أعلى عشان تاخد القرار الصح<br>
+                            ـ يقوي مناعتك ويحافظ على صحتك العامة<br>
+                            ـ بيساعدك تفضل في أفضل فورمة مهما كان سنك أو مجهودك<br><br>
+                            ـ خليك في أقوى نسخة من نفسك.. اطلب ويلمان دلوقتي 👇<br><br>
+                            للطلب والاستفسار: 0473116888 / 01099009070<br>
+                            📍  كفر الشيخ – بجوار موقف كفر الشيخ الكبير (آخر الموقف) – كوبري ميت علوان<br>
+                            تقسيم المحاسبين – اتجاه الـ 47 – بجوار مخزن رضا عطية<br>
+                            ومتاح توصيل مجاني داخل محافظة كفر الشيخ ❤️
+                        </p>
+
+                    </div>
+                </div>
+    <div class="video-card">
+                    <img src="Elm7asbeen/7.jpg" alt="Video 1">
+                    <div class="video-content">
+                        <!-- <h3>إعلان حملة تسويقية لمنتج جديد</h3> -->
+                        <p dir="rtl">
+                            شامبو Cantu … حبة العناية اللي الكيرلي محتاجها 🌿<br>
+                            لو شعرك أو شعر طفلك كيرلي، هايش، أو بيحتاج ترطيب زيادة…<br>
+                            Cantu هو الاختيار الصح 👌<br><br>
+                            بتركيبته الغنية بزبدة الشيا 💖<br>
+                            – بينضف من غير ما ينشف<br>
+                            – بيحافظ على شكل الكيرلز<br>
+                            – بيسهل التمشيط ويقلل الهيشان<br><br>
+                            مناسب للكبار والأطفال… يعني عناية طبيعية لكل العيلة!<br><br>
+                            📍 متوفر دلوقتي في صيدلية المحاسبين<br>
+                            للطلب والاستفسار: 0473116888 / 01099009070<br><br>
+                            العنوان:<br>
+                            كفر الشيخ – بجوار موقف كفر الشيخ الكبير (آخر الموقف) – كوبري ميت علوان<br>
+                            تقسيم المحاسبين – اتجاه الـ 47 – بجوار مخزن رضا عطية<br>
+                            ومتاح توصيل مجاني داخل محافظة كفر الشيخ
+                        </p>
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+      <div class="script-item">
+        <!-- <img src="Nouf/stratgy.png" alt="Content Plan 1" class="script-img"> -->
+        <div class="script-info">
+            <h3> شهر اغسطس </h3>
+            <div class="script-links">
+                <a href="https://docs.google.com/spreadsheets/d/1xMSp2fW0vXTxLbQXtIOiJWQFxUD0U3LecyHVJ6ZamfQ/edit?usp=sharing"
+                    class="script-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Content Plan
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="script-item">
+        <!-- <img src="Nouf/stratgy.png" alt="Content Plan 1" class="script-img"> -->
+        <div class="script-info">
+            <h3>شهر سبتمبر</h3>
+            <div class="script-links">
+                <a href="https://docs.google.com/spreadsheets/d/1Ex13CFsqczdtqCTX-RXAFUQiDZRWs7krrfUwJnXzFjY/edit?usp=sharing"
+                    class="script-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Content Plan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="script-item">
+        <!-- <img src="Nouf/stratgy.png" alt="Content Plan 1" class="script-img"> -->
+        <div class="script-info">
+            <h3>شهر أكتوبر و نوفمبر</h3>
+            <div class="script-links">
+                <a href="https://docs.google.com/spreadsheets/d/14h9qFCHjzJuj6BJVFlgdfdg30V1TmHLGP2Lfnsr35yA/edit?usp=sharing"
+                    class="script-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Content Plan
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+     <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Abdeen Mohamed</h3>
+                    <p>Content Writer & Social Media Specialist creating engaging digital experiences through compelling
+                        stories.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <!-- LinkedIn -->
+                        <a href="https://bit.ly/4jlAS2w" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                   
+
+                        <!-- Email -->
+                        <a href="mailto:abdeenmuhamed1@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+
+                        <!-- Phone -->
+                        <a href="tel:01080974284" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/2001080974284" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abdeen Mohamed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
